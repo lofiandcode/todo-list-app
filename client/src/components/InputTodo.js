@@ -8,8 +8,6 @@ const InputTodo = () => {
         e.preventDefault();
         try {
             const body = { description };
-            console.log(`${process.env.REACT_APP_URL}/todos`);
-            console.log('hello world')
             const response = await fetch(`${process.env.REACT_APP_URL}/todos`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
