@@ -3,6 +3,7 @@ import './App.css';
 
 // Components
 import InputTodo from './components/InputTodo';
+import List from './components/List';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className='container'>
         <h1 className='text-center mt-5'>To-Do List App</h1>
         <InputTodo />
+        <List />
       </div>
     </Fragment>
   );
