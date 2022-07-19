@@ -4,9 +4,12 @@ const Todos = () => {
 
     const [todos, setTodos] = useState([{"id": 1, "description": 'This a test of the Todos component'}]);
 
-    const deleteTodo = async () => {
+    const deleteTodo = async (id) => {
         try {
-            
+            const response = await fetch(`${process.env.REACT_APP_URL}/todos/${id}`, {
+                method: 'DELETE'
+            });
+            setTodos(todos.filter(todo => todo.id != id));
         } catch (error) {
             console.log(error.message);
         }
@@ -35,7 +38,7 @@ const Todos = () => {
                             <button className="btn btn-warning">Edit</button>
                         </td>
                         <td>
-                            <button className="btn btn-danger">Delete</button>
+                            <button className="btn btn-danger" onClick={() => deleteTodo(todo.id)}>Delete</button>
                         </td>
                     </tr>
                 ))}
