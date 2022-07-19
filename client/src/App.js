@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react';
 import './App.css';
 
+// Components
+import InputTodo from './components/InputTodo';
+
 function App() {
   return (
     <Fragment>
-      <h1>To-Do List App</h1>
+      <div className='container'>
+        <h1 className='text-center mt-5'>To-Do List App</h1>
+        <InputTodo />
+      </div>
     </Fragment>
   );
 }
