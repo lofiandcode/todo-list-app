@@ -1,8 +1,11 @@
 import React, { Fragment, useState, useEffect } from "react";
 
+//Components
+import EditTodo from "./EditTodo";
+
 const Todos = () => {
 
-    const [todos, setTodos] = useState([{"id": 1, "description": 'This a test of the Todos component'}]);
+    const [todos, setTodos] = useState([]);
 
     const deleteTodo = async (id) => {
         try {
